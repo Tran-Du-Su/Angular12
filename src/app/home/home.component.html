@@ -5,5 +5,9 @@
   <input type="text" value="{{ name }}" title="My name is:  {{ name }}">
   <br>
   <input type="text" [value]="name" [title]="'My name is: ' + name">
+
+  <h4 *ngIf="age > 30">You are old</h4>
+
+  <h4 *ngIf="age <= 30">You are young</h4>
 </div>
 
