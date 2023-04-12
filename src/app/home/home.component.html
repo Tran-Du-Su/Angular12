@@ -1,20 +1,10 @@
 <div class="test">
   <h3>This is a new component (Home Component)</h3>
 
-  <input type="text" [(ngModel)]="age">
-  <br>
-  <!-- <h4>Hello: {{ name }}</h4> -->
-  <!-- <input type="text" [value]="name" [title]="'My name is: ' + name"> -->
+  <h1>Juice</h1>
+  <div *ngFor="let juice of juices; let i = index">
+    <li>{{ i + 1 }}. {{ juice }}</li>
+  </div>
 
-<h4>Your age: {{ age }}</h4>
-
-  <!-- <h4 *ngIf="age > 30">You are old</h4>
-  <h4 *ngIf="age <= 30">You are young</h4> -->
-
-  <div *ngIf="age > 30; then old else young"></div>
-  <ng-template #old>You are old</ng-template>
-  <ng-template #young>You are young</ng-template>
-  <br><br>
-  <button (click)="resetName()">Reset name</button>
 </div>
 
