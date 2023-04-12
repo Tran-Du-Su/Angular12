@@ -16,12 +16,13 @@
   <tbody>
     <tr *ngFor="let juice of juices; let i = index">
       <td>{{ i+1 }}</td>
-      <td>{{ juice.name }}</td>
-      <td>{{ juice.price }}</td>
+      <td>{{ juice.name | uppercase}}</td>
+      <td>{{ juice.price | currency: "USD": "symbol": "1.0"}}</td>
       <td class="text-end" [ngClass] = "{ 'negative' : juice.quantity < 0 }">{{ juice.quantity }}</td>
-      <td>
+      <td>{{ juice.quantity | onsale | uppercase}}</td>
+      <!-- <td>
         <span *ngIf="juice.discount">Discount</span>
-      </td>
+      </td> -->
     </tr>
   </tbody>
 
