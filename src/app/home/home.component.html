@@ -2,31 +2,21 @@
 
 <div class="container">
 
-<table class="table table-bordered table-striped mt-5">
-  <thead>
-    <tr>
-      <th>No.</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Discount</th>
-    </tr>
-  </thead>
+  <div class="mt-5 row">
+    <div class="col-6">
+      <label for="">City</label>
+      <select class="form-select" (change)="changeCity($event)">
+        <option *ngFor="let data of vietNamData" value="{{ data.city }}">{{ data.city }}</option>
+      </select>
+    </div>
 
-  <tbody>
-    <tr *ngFor="let juice of juices; let i = index">
-      <td>{{ i+1 }}</td>
-      <td>{{ juice.name | uppercase}}</td>
-      <td>{{ juice.price | currency: "USD": "symbol": "1.0"}}</td>
-      <td class="text-end" [ngClass] = "{ 'negative' : juice.quantity < 0 }">{{ juice.quantity }}</td>
-      <td>{{ juice.quantity | onsale | uppercase}}</td>
-      <!-- <td>
-        <span *ngIf="juice.discount">Discount</span>
-      </td> -->
-    </tr>
-  </tbody>
-
-</table>
+    <div class="col-6">
+      <label for="">District</label>
+      <select class="form-select" (change)="changeCity($event)">
+        <option *ngFor="let district of districts" value="{{ district }}">{{ district}}</option>
+      </select>
+    </div>
+  </div>
 
 </div>
 
