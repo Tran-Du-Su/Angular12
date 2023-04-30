@@ -11,4 +11,8 @@ export class CommonService {
   public binhPhuong(n: number): number {
     return n * n;
   }
+
+  public submitData(email: any): void {
+    console.log('Send data to server, data = ', email)
+  }
 }

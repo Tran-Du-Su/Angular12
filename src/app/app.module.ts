@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { OnsalePipe } from './onsale.pipe';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HighlightDirective } from './Directive/highlight.directive';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HighlightDirective } from './Directive/highlight.directive';
     AboutComponent,
     OnsalePipe,
     PageNotFoundComponent,
-    HighlightDirective
+    HighlightDirective,
+    TemplateDrivenFormComponent
   ],
   imports: [
     BrowserModule,
