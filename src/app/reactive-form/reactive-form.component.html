@@ -1,0 +1,18 @@
+<form [formGroup]="formData2" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input formControlName="email"
+      [ngClass]="formData2.controls['email'].valid ? 'form-control': 'form-control is-invalid'" id="exampleInputEmail1"
+      aria-describedby="emailHelp" />
+    <span class="invalid-feedback">Please input your email!</span>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Name</label>
+    <input type="text" formControlName="name"
+    [ngClass]="formData2.controls['name'].valid ? 'form-control': 'form-control is-invalid'"
+    id="exampleInputPassword1">
+    <span class="invalid-feedback">Please input your name!</span>
+  </div>
+  <!-- <button type="submit" (click)="submitForm()" class="btn btn-primary">Submit</button> -->
+  <button type="submit" class="btn btn-primary" [disabled]="!formData2.valid">Submit</button>
+</form>
