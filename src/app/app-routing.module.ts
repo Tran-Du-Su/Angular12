@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { GetDataComponent } from './get-data/get-data.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'templateForm', component: TemplateDrivenFormComponent },
   { path: 'reactiveForm', component: ReactiveFormComponent },
+  { path: 'getData', component: GetDataComponent },
   { path: '**', component: PageNotFoundComponent}
 ];
 

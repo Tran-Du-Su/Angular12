@@ -1,0 +1,43 @@
+<div class="mt-5 row">
+  <div class="col-6">
+    <h2>Create Comment</h2>
+
+    <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Content</label>
+        <input formControlName="content"
+          [ngClass]="formData.controls['content'].valid ? 'form-control': 'form-control is-invalid'"
+          id="exampleInputEmail1" aria-describedby="emailHelp" />
+        <span class="invalid-feedback">Please input your content!</span>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Post Id</label>
+        <input type="text" formControlName="postId"
+          [ngClass]="formData.controls['postId'].valid ? 'form-control': 'form-control is-invalid'"
+          id="exampleInputPassword1">
+        <span class="invalid-feedback">Please input your name!</span>
+      </div>
+      <!-- <button type="submit" (click)="submitForm()" class="btn btn-primary">Submit</button> -->
+      <button type="submit" class="btn btn-primary" [disabled]="!formData.valid">Submit</button>
+    </form>
+  </div>
+
+  <div class="col-6">
+    <h2>List Comments</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Content</th>
+          <th>PortId</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of dataCOmments">
+          <td>{{ data['id'] }}</td>
+          <td>{{ data['body'] }}</td>
+          <td>{{ data['postId'] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
